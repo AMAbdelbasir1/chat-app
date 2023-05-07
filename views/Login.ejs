@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="/css/login.css" rel="stylesheet">
+<link rel="icon" href="/mainlogo.png" type="image/x-icon">
+
+    <title>login</title>
+</head>
+<body>
+    <div class="cenlog">
+       <img src="/mainlogo.png" id="imglog">
+       <p id="lablog"><span id="log">B</span>e<span id="log">C</span>hat</p>
+       <% if(error){ %>
+       <div class="error">
+        <span id="errMSg"><%= error %></span>
+     </div> 
+     <% } %>
+       <form action="/login" id="formlog" method="post">
+        <input type="email" name="email" id="inpemlog" placeholder="Enter E-mail" value="<%= email %>" required>
+        <input type="password" name="password" id="inpemlog" placeholder="Enter password" value='<%= password %>' required>
+        <br>
+       <input type="submit" value="login" id="btnlog">
+       </form>
+       <div id="line" style="width: 300px;background-color: rgb(217, 221, 224);height: 1px;margin-left: 45px;"> 
+        
+       </div>
+       <p style="color: rgb(210, 226, 240);margin-left: 100px;">Don't have an account ? <a href="/signup" style="color: blanchedalmond;">SignUp</a></p>
+    </div>
+</body>
+</html>

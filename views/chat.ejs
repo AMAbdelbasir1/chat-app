@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/css/chat.css" rel="stylesheet">
+<link rel="icon" href="/mainlogo.png" type="image/x-icon">
+    <title>chat</title>
+</head>
+<body>
+    <div class="contint">
+        <input type="hidden" name="myName" id="myName" value="<%= myName %>">
+        <input type="hidden" name="myId" id="myId" value="<%= myId %>">
+        <input type="hidden" name="chatId" id="chatId" value="<%= chatId %>">
+        <div class="info">
+        <a href="/" style="text-decoration: none;color: azure; background-color: rgb(148, 60, 60);padding: 10px; border-radius: 20px;">Home</a>
+<% if(isFriend){ %> 
+<img src="/<%=friend.image  %>" style="width: 230px;height: 230px;;border-radius: 20%; margin-left: 10px;margin-top: 50px;">
+       <a href="/profile/<%=friend._id%>" style="color: aliceblue;margin-left: 60px;padding-top: 10px;text-decoration: none;color: rgb(209, 86, 86);"><%=friend.username%></a> 
+<% } %> 
+<% if(isGroup){ %> 
+    <img src="/<%=groupInfo[0].image  %>" style="width: 230px;height: 230px;;border-radius: 20%; margin-left: 15px;margin-top: 50px;">
+    <p style="color: aliceblue;margin-left: 60px;text-decoration: none;color: rgb(209, 86, 86);"><%=groupInfo[0].name%></p> 
+    <div class="container">
+        <p style="color: rgb(192, 120, 120);margin-right: 30px;">Group Members </p>
+         <div class="dropdown">
+             <span style="color: rgb(149, 174, 182);">More</span>
+             <div class="dropdown-content">
+                 <a href="/Image_Upload.html">changeImage</a>
+                 <a href="/CreateGroup.html">AddMember</a>
+             </div>
+         </div>
+    </div>
+    <div class="memberChat">
+        <% for(let fer of friend) {%> 
+        <div class="memFre">
+ <img src="/<%= fer.image %>" id="FerIMg">
+    <a href="/profile/<%= fer._id %>" id="liMem"><%= fer.username %> 
+    <% if(fer._id.toString()==groupInfo[0].adminId) {%> 
+        <p style="color: aquamarine;font-size: 15px;margin-top: 0px;">admin</p>
+        <% } %> 
+    </a>
+    <form action="/chat/group/removeMember" method="post">
+        <input type="hidden" name="idFre" value="<%= fer._id %>">
+        <input type="hidden" name="chatId" value="<%= chatId %>">
+        <input type="submit" value="kickOut" id="btnKickMeb">
+       </form>
+        </div>
+        
+        <% } %> 
+    
+    </div> 
+    <% } %> 
+    </div>
+        <div class="chat">
+<div class="conchat" id="conchat">
+   <% for(let meg of message) {%>
+    <% if(meg.senderId==myId) {%>
+        <div class="message-orange">
+        <p class="message-content"><%= meg.content %></p>
+        <div class="message-timestamp-right"><%= meg.time %></div>
+    </div>
+        <% } else{%>
+    <div class="message-blue">
+        <p class="message-content"><%= meg.content %></p>
+        <div class="message-timestamp-left"><%= meg.time %></div>
+    </div>
+    <% } %>
+    <% } %>
+</div>
+<form action="">
+    <input type="text" id="sendinp" value="" placeholder="Message">
+    <input type="submit" value="Send" id="sendbtn">
+</form>
+        </div>
+    </div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/sockets/init.js"></script>
+<script src="/js/sockets/chat.js"></script>
+</body>
+</html>

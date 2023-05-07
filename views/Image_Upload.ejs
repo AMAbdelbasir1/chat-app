@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Design by foolishdeveloper.com -->
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" href="/mainlogo.png" type="image/x-icon">
+  <title>Upload Image</title>
+  <link rel="stylesheet" href="/css/imageUpload.css">
+</head>
+<body>
+  <% if(error) {%>
+  <div class="error">
+    <span id="errMSg"><%= error %></span>
+ </div> 
+ <% } %>
+ <div class="center">
+  <div class="form-input">
+    <div class="preview">
+      <img id="file-ip-1-preview" src="/<%= image %> ">
+    </div>
+<form action="/saveImage" method="post"  enctype="multipart/form-data">
+  <input type="hidden" name="oldImg" value="<%= image %>">
+  <label for="file-ip-1">Upload Image</label>
+    <input type="file" id="file-ip-1" name="imgUp" accept="image/*" onchange="showPreview(event);">
+  </div>
+ 
+   
+</div> 
+ <div class="saveimg">
+  <div id="formSave">
+    <input type="submit" value="save"  id="btnSaveImg" style="display: none;">
+    <input type="submit" value="cancle" formaction="/profile"  id="btnSaveImg" style="background-color: brown;">
+  </div>  
+  </form>
+  </div>
+<script src="/js/image.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+body{
+    background: rgb(156, 90, 90);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cenlog{
+    background-color: rgb(61, 33, 33);
+    width: 400px;
+    height: 400px;
+    margin-top: 100px;
+    display: block;
+        align-items: center;
+        justify-content: center;
+}
+#imglog{
+    width: 60px;
+    height: 60px;
+    margin-left: 160px;
+    margin-top: 30px;
+}
+#lablog{
+    font-size: 20px;
+    margin-top: 0px;
+    margin-left: 160px;
+}
+#log {
+    color: rgb(167, 6, 6);
+}
+#formlog{
+    padding: 20px;
+}
+#btnlog{
+    margin-left: 140px;
+    width: 80px;
+    height: 40px;
+   background-color: brown;
+   color: aliceblue;
+   border-radius: 10px;
+   
+}
+#btnlog:hover{
+background-color: rgb(223, 36, 36);
+}
+#inpemlog{
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    border-radius: 5px;
+    outline: none;
+}
+
+#errMSg{
+    color: red;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .error{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }

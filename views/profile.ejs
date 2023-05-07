@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/mainlogo.png" type="image/x-icon">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <div class="profile">
+        <a href="/" style="padding: 10px; background-color: brown; color: beige;height: 20px;border-radius: 20px;text-decoration: none;">Home</a>
+        <div class="imgprof">
+<img src="/<%=image%> " id="imgp">
+        </div>
+        <div class="infoprof">
+<h3 ><%= username %> </h3>
+<h3 ><%= email %> </h3>
+<form action="" method="post" id="formConcat">
+    <input type="hidden" name="myImage" id="myImage" value="<%= myImage %>">
+    <input type="hidden" name="myName" id="myName" value="<%= myName %>">
+    <input type="hidden" name="myEmail" id="myEmail" value="<%= myEmail %>">
+    <input type="hidden" name="myId" id="myId" value="<%= myId %>">
+    <input type="hidden" name="userId" id="userId" value="<%= userId %>">
+    <input type="hidden" name="userName" id="userName" value="<%= username %>">
+    <input type="hidden" name="userEmail" id="userEmail" value="<%= email %>">
+    <input type="hidden" name="userImage" id="userImage" value="<%= image %>">
+    <input type="hidden" name="chatId" id="chatId" value="<%= chatId %>">
+    <% if(!isOwner){ %> 
+        <% if(isFreind){ %> 
+            <div id="disCon">
+  <input type="button" value="DisConncat" id="disBtn">
+     <a href="/chat/<%= chatId %>"> 
+        <input type="button" value="Chat" id="chBtn">
+    </a>
+            </div>
+    <% } else if(isSendReq){%> 
+<input type="submit" value="cancel" id="canBtn">
+<% } else if(isReq){%> 
+<div id="reqAns">
+<input type="submit" value="accept" id="accBtn">
+<input type="submit" value="reject" id="rejBtn">
+</div>
+<% }else{ %>
+    <input type="submit" value="Conncat" id="concBtn">
+    <% } %>  
+    <% } else{%>
+<input type="submit" value="DeleteAccount" id="delBtn" formaction="/deleteAccount">
+<a href="/changeImage" id="imgCg">changeImage</a>
+        <% } %>  
+</form>
+        </div>
+    </div>
+<% if(!isOwner) {%> 
+    <script src="/socket.io/socket.io.js"></script>
+<script src="/js/sockets/init.js"></script>
+<script src="/js/sockets/concat.js"></script>
+    <% } %> 
+</body>
+</html>

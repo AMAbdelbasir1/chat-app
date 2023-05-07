@@ -1,0 +1,97 @@
+body {
+    background: rgb(156, 90, 90);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cenlog {
+    background-color: rgb(61, 33, 33);
+    width: 400px;
+    height: 540px;
+    margin-top: 100px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+/*Scroll bar*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track  box-shadow: inset 0 0 5px grey;*/
+::-webkit-scrollbar-track {
+
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(150, 20, 20);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    width: 15px;
+    background: #f80101;
+}
+
+#nameGroup{
+    width: 300px;
+    margin: 30px;
+    margin-bottom: 10px;
+    height: 30px;
+    background-color: rgb(27, 36, 33);
+    color: antiquewhite;
+    outline: none;
+    border: none;
+}
+#imgCss{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-top: 3px;
+}
+#Gpmb{
+margin-top: 28px;
+margin-left: 5px;
+color: azure;
+}
+.showMember{
+margin-left: 30px;
+margin-bottom: 2px;
+background-color: #3a1313;
+width: 80%;
+height: 80px;
+display: flex;
+text-align: center;
+}
+#slidShow{
+    height: 330px;
+    overflow-y: scroll;
+}
+#creBtn{
+    width: 100px;
+        height: 30px;
+        background-color: #0c263f;
+        color: white;
+        border: none;
+        margin-top: 5px;
+        margin-left: 100px;
+}
+#creBtn:hover {
+
+    background-color: #184f83;
+}
+#canBtn{
+width: 100px;
+    height: 30px;
+    color: white;
+    border: none;
+    margin-top: 5px;margin-left: 5px;
+        background-color: rgb(180, 11, 11);
+}
+#canBtn:hover {
+    background-color: rgb(211, 16, 16);
+}

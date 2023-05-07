@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/css/main.css" rel="stylesheet">
+<link rel="icon" href="/mainlogo.png" type="image/x-icon">
+    <title>BeChat</title>
+</head>
+<body>
+    <div id="nav">
+        <span id="logo">
+        <img src="/mainlogo.png" style="width: 30px;">
+        <span id="log">B</span>e<span id="log">C</span>hat</span>
+    <div id="sel"> 
+    <button class="li-nav active" id="getFreinds">Freinds</button>
+    <button class="li-nav" id="getGroups">Group</button>
+    <button class="li-nav" id="getReqs">Requests</button>
+  <% if(reqsNum>0) {%> 
+    <span id="reqsNum" style="background-color: rgb(204, 55, 55);color: white;border-radius: 50%;opacity: 1;padding: 5px;"><%=reqsNum%></span>
+<% } %> 
+</div>
+<details class="dropdown">
+    <summary role="button">
+      <a class="button">account</a>
+    </summary>
+    <ul>
+      <li><a href="/profile">Profile</a></li>
+      <li><form action="/logout" method="post"><button type="submit" id="logBtn">logout</button></form></li>
+     
+  </ul>
+</details>
+</div>
+    </div>
+    <br>
+    <input type="hidden" name="myId" id="myId" value="<%= myId %>">
+<div class="container" id="contFreind">
+    <div class="ser">
+        <input type="text" name="search" id="searchFre" value="" placeholder="search new friends" >
+        <input type="button" value="search" id="searchBtn" ><br>
+        <div id="serchC">
+ <input type="button" class="ser-li activer" value="myFriends" id="myFriBtn" >
+        <input type="button" class="ser-li" value="Explore" id="expBtn" >
+        </div>
+    </div>
+     <div id="result" style="display: flex;flex-wrap: wrap;">
+    <% if(friends.length>0){ %> 
+        <% for(let fer of friends){%> 
+        <div id="fir">
+<img src="/<%= fer.image %>" style="width: 100px;height: 100px;;border-radius: 50px;">
+<div id="info">
+    <p style="color: rgb(127, 150, 255);margin-bottom: 0px; display: none;">New massege</p>
+    <p >
+<a href="/profile/<%= fer.id %>" id="use"><%=fer.name%> </a>
+<p></p>
+<a href="/profile/<%= fer.id %>" id="use"><%=fer.email%></a>
+</p>
+<a href="/chat/<%= fer.chatId %> " id="link-btn">Chat</a>
+<span id="isonl" style="color: rgb(0, 255, 179); margin-left: 3px; display: none;">Online</span>
+</div>
+</div>
+<% }} else {%>
+<h1 style="color: rgb(202, 194, 194); margin-left: 300px;margin-top: 100px;">You have not any freind</h1>
+<% } %>  
+    </div>
+    
+</div>
+
+<script src="/js/main.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/sockets/init.js"></script>
+<script src="/js/sockets/friends.js"></script>
+<script src="/js/sockets/groups.js"></script>
+</body>
+</html>

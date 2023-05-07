@@ -1,0 +1,328 @@
+/*helps
+center:
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+*/
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(92, 85, 85);
+    overflow: hidden;
+}
+/*Scroll bar*/
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track  box-shadow: inset 0 0 5px grey;*/
+::-webkit-scrollbar-track {
+    
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}
+/*NavBar css*/
+#nav{
+    background-color: rgb(31, 28, 28);
+    max-width: 1100px;
+    height: 60px;
+    margin-left: 115px;
+    border-radius: 50px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+#logo{
+    color: rgb(229, 183, 183);
+    font-size: 20px;
+    margin-left: 30px;
+}
+#log{
+    color: brown;
+}
+.li-nav{
+color: rgb(229, 239, 247);
+    font-size: 20px;
+    margin-left: 150px;
+    opacity: .5;
+        background-color: rgb(31, 28, 28);
+        border: none;
+}
+.li-nav:hover {
+   
+    opacity: 1;
+}
+.li-navr {
+    color: rgb(180, 207, 230);
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+#auth{
+    margin-left: 130px;
+}
+#OR{
+    color: aliceblue;
+}
+.active{
+    opacity: 1;
+    background-color: #b30000;
+    border-radius: 20px;
+    padding: 10px;
+    
+}
+/****************/
+.container{
+    width: 1000px;
+   height: 590px;
+    background-color: rgb(122, 59, 69);
+margin-top: 3px;
+margin-left: 120px;
+padding: 20px;
+display: inline-block;
+    overflow-y:scroll;
+    border-radius: 50px;
+}
+
+#fir{
+    background-color: rgb(92, 85, 85);
+    max-width: 400px;
+    height: 150px;
+    margin-left: 100px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    border-radius: 10px;
+    padding: 5px;
+}
+#info{
+display: inline-block;
+margin-left: 20px;
+margin-top: 0px;
+}
+#use{
+    color: antiquewhite;
+    text-decoration: none;
+}
+#link-btn{
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #b30000;
+    padding: 10px;
+    margin-left: 50px;
+    
+    border-radius: 10px;
+}
+#link-btn:hover{
+background-color: #e01818;
+}
+
+/********Dorpdown******/
+:root {
+    --button-background: rgb(31, 28, 28);
+    ;
+    --button-color: white;
+
+    --dropdown-highlight: rgb(187, 54, 54);
+    --dropdown-width: 100px;
+    --dropdown-background: white;
+    --dropdown-color: black;
+}
+
+/* Center the planet */
+
+
+/* Boring button styles */
+a.button {
+    /* Frame */
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    margin-left: 100px;
+    /* Style */
+    border: none;
+    background: var(--button-background);
+    color: var(--button-color);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+a.button:active {
+    filter: brightness(75%);
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    padding: 0;
+    margin-right: 1em;
+
+    border: none;
+}
+
+.dropdown summary {
+    list-style: none;
+    list-style-type: none;
+}
+
+.dropdown>summary::-webkit-details-marker {
+    display: none;
+}
+
+.dropdown summary:focus {
+    outline: none;
+}
+
+.dropdown summary:focus a.button {
+    border: 1px solid rgb(161, 29, 29);
+}
+
+.dropdown summary:focus {
+    outline: none;
+}
+
+.dropdown ul {
+    position: absolute;
+    margin: 20px 0 100px 0;
+    padding: 10px 5px 0 0;
+    width: var(--dropdown-width);
+    left: 70%;
+    margin-left: calc((var(--dropdown-width) / 2) * -1);
+    box-sizing: border-box;
+    z-index: 2;
+
+    background: var(--dropdown-background);
+    border-radius: 6px;
+    list-style: none;
+}
+
+.dropdown ul li {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li a:link,
+.dropdown ul li a:visited {
+    display: inline-block;
+    padding: 10px 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--dropdown-color);
+    text-decoration: none;
+}
+
+.dropdown ul li a:hover {
+    background-color: var(--dropdown-highlight);
+    color: var(--dropdown-background);
+}
+
+/* Dropdown triangle */
+.dropdown ul::before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -10px;
+    left: 50%;
+    margin-left: 0px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent var(--dropdown-background) transparent;
+}
+
+
+/* Close the dropdown with outside clicks */
+.dropdown>summary::before {
+    display: none;
+}
+
+.dropdown[open]>summary::before {
+    content: ' ';
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#logBtn {
+    width: 100px;
+    height: 40px;
+    border: navy;
+    background-color: white;
+    text-align: left;
+    font-size: 18px;
+}
+
+#logBtn:hover {
+    background-color: rgb(187, 54, 54);
+}
+
+#searchFre {
+    width: 600px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #531111;
+    color: aliceblue;
+        outline: none;
+}
+
+#searchBtn {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(104, 157, 226);
+
+}
+#searchGroupBtn{
+    width: 100px;
+        height: 35px;
+        border: none;
+        border-radius: 20px;
+        background-color: rgb(104, 157, 226);
+}
+#searchGroup{
+    width: 600px;
+        height: 30px;
+        border: none;
+        border-radius: 10px;
+        background-color: #531111;
+        color: aliceblue;
+        outline: #b30000;
+}
+.ser-li {
+    width: 160px;
+    color: rgb(229, 239, 247);
+    font-size: 20px;
+    background-color: black;
+    height: 40px;
+    border: none;
+    margin-left: 5px;
+    opacity: .6;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.activer {
+    opacity: 1;
+    background-color: #b30000;
+    border-radius: 10px;
+    padding: 0px;
+}

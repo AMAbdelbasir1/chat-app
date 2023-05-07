@@ -1,0 +1,88 @@
+  body {
+      margin: 0px;
+     
+    background-color: rgb(92,
+        85,
+        85);
+        
+  }
+
+  .center {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 100px;
+  }
+
+  .form-input {
+      width: 350px;
+      padding: 20px;
+      background: rgb(59, 35, 35);
+    
+  }
+
+  .form-input input {
+      display: none;
+
+  }
+
+  .form-input label {
+      display: block;
+      width: 45%;
+      height: 45px;
+      margin-left: 25%;
+      line-height: 50px;
+      text-align: center;
+      background: #374d96;
+
+      color: #fff;
+      font-size: 15px;
+      font-family: "Open Sans", sans-serif;
+      text-transform: Uppercase;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  .form-input img {
+      width: 350px;
+      height: 350px;
+      display: block;
+      margin-bottom: 30px;
+      border-radius: 50%;
+  }
+  .saveimg{
+      background: rgb(59,
+        35,
+        35);
+       width: 390px;
+       height: 60px;
+       margin-top: 0px;
+       margin-left: 487px;
+       border: none;
+  }
+  #formSave{
+    margin-left:120px  ;
+  }
+  #btnSaveImg{
+    width: 100px;
+    height: 40px;
+    background-color: aquamarine;
+    border: none;
+    display: inline;
+  }
+
+  #errMSg{
+    color: red;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(41, 13, 13)
+    
+    }
+    .error{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+    }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/createGroup.css" />
+    <title>Create Group</title>
+  </head>
+  <body>
+    <div class="cenlog">
+      <form action="/createGroup" method="post">
+        <h1 style="margin-left: 100px; color: brown">Create group</h1>
+        <input
+          type="text"
+          id="nameGroup"
+          name="groupName"
+          placeholder="Name of group"
+          required /><br />
+        <div id="slidShow">
+          <% for(let fer of freinds){ %> 
+          <div class="showMember">
+            <input type="checkbox" name="groupMember" value="<%=fer.id%>" />
+            <img src="/<%= fer.image %> " id="imgCss" />
+            <label for="groupMember"  id="Gpmb"><%=fer.name%> </label><br />
+          </div>
+          <% } %> 
+        </div>
+        <input type="submit" value="Create" id="creBtn" />
+        <a href="/">
+          <input type="button" value="cancle" id="canBtn" />
+        </a>
+      </form>
+    </div>
+  </body>
+</html>

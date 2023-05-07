@@ -1,0 +1,8 @@
+1-> handling error
+2-> valdation logIn and signup 
+4-> edit password,username and image to profile 
+5-> delete account function  (Done)
+6-> online and new message
+7-> video and call to chat
+8-> maybe add message withaout concat
+9-> change name group and add new member change group name change image group
