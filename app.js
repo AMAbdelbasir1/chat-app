@@ -2,6 +2,7 @@
 const express = require("express");
 const color = require("colors");
 const dotenv = require("dotenv");
+const helmet = require("helmet");
 dotenv.config({ path: "config.env" });
 const app = express();
 const server = require("http").createServer(app);
@@ -27,7 +28,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.static("images"));
 app.use(express.urlencoded({ extended: true }));
-
+app.use(helmet());
 // for auto refresh
 const path = require("path");
 const livereload = require("livereload");
