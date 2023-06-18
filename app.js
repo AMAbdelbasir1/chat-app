@@ -1,6 +1,8 @@
 //  To controll ur website
 const express = require("express");
 const color = require("colors");
+const dotenv = require("dotenv");
+dotenv.config({ path: "config.env" });
 const app = express();
 const server = require("http").createServer(app);
 const port = 3000;
@@ -8,13 +10,13 @@ const port = 3000;
 const session = require("express-session");
 const sessionStore = require("connect-mongodb-session")(session);
 const Store = new sessionStore({
-  uri: "mongodb://127.0.0.1:27017/BeChat",
+  uri: process.env.DB_URL,
   collection: "sessions",
 });
 
 app.use(
   session({
-    secret: "this my Bechat app to chat with freinds",
+    secret: process.env.SECRETKEY,
     saveUninitialized: false,
     store: Store,
   }),
@@ -43,7 +45,7 @@ liveReloadServer.server.once("connection", () => {
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", true);
 mongoose
-  .connect("mongodb://127.0.0.1:27017/BeChat")
+  .connect(process.env.DB_URL)
   .then((result) => {
     console.log("database connected".yellow);
     server.listen(process.env.PORT || port, () => {
