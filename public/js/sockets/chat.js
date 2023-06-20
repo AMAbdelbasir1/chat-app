@@ -22,8 +22,8 @@ sendbtn.onclick = (e) => {
 };
 socket.on("newMsg", (data) => {
  // console.log(data);
-  sendinp.value = "";
   if (data.myId == myId) {
+    sendinp.value = "";
     conchat.innerHTML += `  <div class="message-orange">
         <p class="message-content">${data.content}</p>
         <div class="message-timestamp-right">${data.time}</div>
