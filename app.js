@@ -6,7 +6,7 @@ const helmet = require("helmet");
 dotenv.config({ path: "config.env" });
 const app = express();
 const server = require("http").createServer(app);
-const port = 3000;
+const port = 3001;
 //create session
 const session = require("express-session");
 const sessionStore = require("connect-mongodb-session")(session);
@@ -31,16 +31,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 // for auto refresh
 const path = require("path");
-const livereload = require("livereload");
-const liveReloadServer = livereload.createServer();
-liveReloadServer.watch(path.join(__dirname, "public"));
-const connectLivereload = require("connect-livereload");
-app.use(connectLivereload());
-liveReloadServer.server.once("connection", () => {
-  setTimeout(() => {
-    liveReloadServer.refresh("/");
-  }, 100);
-});
+// const livereload = require("livereload");
+// const liveReloadServer = livereload.createServer();
+// liveReloadServer.watch(path.join(__dirname, "public"));
+// const connectLivereload = require("connect-livereload");
+// app.use(connectLivereload());
+// liveReloadServer.server.once("connection", () => {
+//   setTimeout(() => {
+//     liveReloadServer.refresh("/");
+//   }, 100);
+// });
 
 // mongoose
 const mongoose = require("mongoose");
@@ -80,7 +80,7 @@ const { joinChat, sendMsg } = require("./sockets/chat.js");
 /***** */
 const io = require("socket.io")(server);
 io.on("connection", (socket) => {
-  //console.log("server connected".red);
+  console.log("server connected".red);
   //jpin operation
   joinApp(socket);
   //joinChat

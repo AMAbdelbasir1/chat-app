@@ -1,3 +1,4 @@
+document.getElementById('file-ip-1').addEventListener('change', showPreview);
 function showPreview(event) {
   if (event.target.files.length > 0) {
     let btnSaveImg = document.getElementById("btnSaveImg");
