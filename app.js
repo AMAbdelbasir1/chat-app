@@ -28,7 +28,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.static("images"));
 app.use(express.urlencoded({ extended: true }));
-app.use(helmet());
+// app.use(helmet());
 // for auto refresh
 const path = require("path");
 // const livereload = require("livereload");
